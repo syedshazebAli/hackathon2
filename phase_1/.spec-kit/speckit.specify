@@ -1,0 +1,78 @@
+# Phase 1 Todo App Requirements Specification
+
+## Functional Requirements
+
+### 1. Basic Essentials
+
+#### 1.1 Add Todo Item
+- Command: `add "task title" "optional description"`
+- Stores new todo item with unique ID in memory
+- Sets initial status to "pending"
+- Validates that task title is not empty
+- Sets default priority to "medium" if not specified
+- Creates empty tags list if not specified
+
+#### 1.2 List Todo Items
+- Command: `list`
+- Displays all todo items with ID, status, title, description, priority, and tags
+- Shows completed and pending items separately
+- Formats output in a readable table
+
+#### 1.3 Update Todo Item
+- Command: `update <id> "new title" "optional new description"`
+- Modifies existing todo item's title and/or description
+- Validates that ID exists
+- Shows confirmation message
+
+#### 1.4 Complete Todo Item
+- Command: `complete <id>`
+- Updates status of specified todo item to "completed"
+- Validates that ID exists and is not already completed
+- Shows confirmation message
+
+#### 1.5 Delete Todo Item
+- Command: `delete <id>`
+- Removes specified todo item from in-memory storage
+- Validates that ID exists
+- Shows confirmation message
+
+### 2. Intermediate Organization
+
+#### 2.1 Priorities & Tags
+- Command: `priority <id> <high|medium|low>`
+- Sets priority level for a specific todo item (High/Medium/Low)
+- Command: `tag <id> <tag1> [tag2] [tag3]...`
+- Adds tags to a specific todo item (Work/Home/Personal or custom tags)
+- Command: `view <id>` to view detailed information about a specific todo
+- Displays all details including priority and tags
+
+#### 2.2 Search & Filter
+- Command: `search <keyword>`
+- Searches for todos containing the keyword in title or description
+- Command: `filter <status|priority> <value>`
+- Filters todos by status (pending/completed) or priority (high/medium/low)
+- Command: `filter tag <tag>`
+- Filters todos by specific tag
+
+#### 2.3 Sort Tasks
+- Command: `sort <priority|id>`
+- Sorts todos by priority (high to low) or by ID (ascending)
+- Default sort order is by ID ascending
+
+## Non-Functional Requirements
+
+### 1. Data Storage
+- Store todos in-memory using Python list/dictionary
+- No file persistence (volatile storage)
+- Data resets on application restart
+- Fast in-memory operations
+
+### 2. Error Handling
+- Validate all user inputs
+- Handle invalid IDs gracefully
+- Display meaningful error messages
+
+### 3. Usability
+- Provide clear command usage instructions
+- Show helpful error messages
+- Support standard CLI conventions
