@@ -1,0 +1,41 @@
+# Phase 1 In-Memory CLI Todo App Execution Steps
+
+## Setup Tasks
+1. Initialize Python environment
+2. Create project directory structure with /src folder
+3. Install required dependencies
+
+## Implementation Tasks
+
+### Task 1: Refactor todo_manager.py for In-Memory Storage
+- Remove JSON persistence functionality
+- Implement in-memory storage using Python list/dictionary
+- Initialize empty storage on startup (volatile)
+- Implement add_todo(task, description) function
+- Implement list_todos() function
+- Implement complete_todo(todo_id) function
+- Implement delete_todo(todo_id) function
+- Implement update_todo(todo_id, new_task, new_description) function
+- Implement get_next_id() function
+- Add proper error handling and validation
+
+### Task 2: Enhance main.py with Update Command
+- Implement argument parsing using argparse (with update command)
+- Implement CLI command handlers (add, list, complete, delete, update)
+- Connect CLI to todo_manager functions
+- Add proper error handling
+- Format output for readability
+
+### Task 3: Test functionality
+- Test add command
+- Test list command
+- Test complete command
+- Test delete command
+- Test update command
+- Verify in-memory storage (no file persistence)
+
+## Deployment Tasks
+1. Verify all functionality works as expected
+2. Confirm data is stored in-memory only (no persistent files)
+3. Test error conditions and edge cases
+4. Document usage instructions for In-Memory CLI app

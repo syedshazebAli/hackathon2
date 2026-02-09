@@ -1,0 +1,15 @@
+# Speckit Constitution for Phase 1 Todo App
+
+## Core Principles
+1. Follow Spec-Driven Development (SDD) methodology
+2. Maintain clean, readable, and maintainable code
+3. Implement in-memory storage with volatile data (no JSON persistence)
+4. Support CLI operations for todo management
+5. Follow Python best practices and PEP 8 guidelines
+6. Data resets on application restart (volatile storage)
+
+## Quality Standards
+- Code must be well-documented
+- Error handling must be comprehensive
+- Input validation is mandatory
+- Data volatility must be accepted (no permanent storage)

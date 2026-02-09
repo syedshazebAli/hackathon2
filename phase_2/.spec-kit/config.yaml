@@ -1,0 +1,27 @@
+# Configuration for the Hackathon Phase 1 Project
+# This is an In-Memory Python Console Application
+
+project:
+  name: "Phase 1 Todo Manager"
+  version: "1.0.0"
+  type: "in-memory-cli"
+  description: "A console-based todo manager with in-memory storage"
+
+specification:
+  persistence: "volatile"
+  storage: "in-memory"
+  reset_on_restart: true
+
+directories:
+  source: "src/"
+  specs: ".spec-kit/"
+  history: "specs/history/"
+
+commands:
+  available:
+    - "add"
+    - "list"
+    - "update"
+    - "complete"
+    - "delete"
+    - "help"

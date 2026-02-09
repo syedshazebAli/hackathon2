@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "task": "Complete project proposal",
+        "category": "Work",
+        "priority": "High",
+        "status": "Pending"
+    },
+    {
+        "id": 2,
+        "task": "Buy groceries",
+        "category": "Personal",
+        "priority": "Medium",
+        "status": "Pending"
+    },
+    {
+        "id": 3,
+        "task": "Call dentist",
+        "category": "Personal",
+        "priority": "Low",
+        "status": "Completed"
+    },
+    {
+        "id": 4,
+        "task": "Prepare presentation",
+        "category": "Work",
+        "priority": "High",
+        "status": "Pending"
+    },
+    {
+        "id": 5,
+        "task": "Schedule team meeting",
+        "category": "Work",
+        "priority": "Medium",
+        "status": "Completed"
+    },
+    {
+        "id": 6,
+        "task": "Test task for array format",
+        "category": "Test",
+        "priority": "Medium",
+        "status": "Pending"
+    }
+]

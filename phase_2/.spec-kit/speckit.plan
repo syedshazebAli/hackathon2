@@ -1,0 +1,74 @@
+# Phase 1 Todo App Architecture Plan
+
+## System Architecture
+
+### Components
+
+#### 1. todo_manager.py
+- Contains core business logic for todo operations
+- Manages data in-memory using Python list/dictionary (no JSON persistence)
+- Implements CRUD operations for todo items
+- Handles data validation and error checking
+- Implements priority and tagging functionality
+- Implements search, filter, and sort functionality
+- Data resets on application restart (volatile storage)
+
+#### 2. main.py
+- Implements CLI interface
+- Parses command-line arguments
+- Routes commands to appropriate functions in todo_manager
+- Handles user interaction and output formatting
+- Includes update, priority, tag, search, filter, sort, and view commands
+
+### Data Model
+
+#### Todo Item Structure
+```python
+{
+    "id": int,
+    "task": str,
+    "description": str,  # Added for update functionality
+    "status": str,  # "pending" or "completed"
+    "priority": str,  # "high", "medium", or "low" with "medium" as default
+    "tags": list,  # List of tags associated with the task
+    "created_at": str  # ISO format timestamp
+}
+```
+
+#### Storage Format
+- In-memory Python list of todo items
+- Volatile storage (resets on application restart)
+- Empty list when no todos exist
+
+### Function Specifications
+
+#### In todo_manager.py:
+- todos: Global in-memory list for storing todo items
+- add_todo(task, description, priority, tags): Adds new todo item with priority and tags
+- list_todos(): Returns all todos
+- complete_todo(todo_id): Marks todo as completed
+- delete_todo(todo_id): Deletes specified todo
+- update_todo(todo_id, new_task, new_description): Updates existing todo
+- set_priority(todo_id, priority): Sets priority for a todo
+- add_tags(todo_id, tags): Adds tags to a todo
+- get_todo_by_id(todo_id): Retrieves a specific todo by ID
+- search_todos(keyword): Searches todos by keyword in task or description
+- filter_todos(filter_type, filter_value): Filters todos by status, priority, or tag
+- sort_todos(sort_type): Sorts todos by priority or ID
+- get_next_id(): Gets next available ID
+- initialize_storage(): Initializes empty in-memory storage
+
+#### In main.py:
+- parse_arguments(): Sets up argument parser with all new commands
+- main(): Main application entry point
+- handle_add(args): Handles add command
+- handle_list(args): Handles list command
+- handle_complete(args): Handles complete command
+- handle_delete(args): Handles delete command
+- handle_update(args): Handles update command
+- handle_priority(args): Handles priority command
+- handle_tag(args): Handles tag command
+- handle_view(args): Handles view command
+- handle_search(args): Handles search command
+- handle_filter(args): Handles filter command
+- handle_sort(args): Handles sort command
